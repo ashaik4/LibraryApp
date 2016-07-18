@@ -8,13 +8,18 @@ app.set('views','./src/views');
 app.set('view engine','ejs');
 
 app.get('/',function(req,res) {
-    res.render('index',{title: 'Hello from render',list:['Books','Authors']});
+    res.render('index',{title: 'Hello from render',nav:[
+        {link:'/Books',Text: 'Books'},
+        {link:'/Authors',Text: 'Authors'}]});
 });
 app.get('/books',function(req,res) {
     res.send('Hello Books');
 });
 
 app.listen(port, function(err) {
+    if (err) {
+        console.log(err);
+    }
     console.log('Server running on  ' + port);
 
 });

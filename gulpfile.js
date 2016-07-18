@@ -31,17 +31,17 @@ gulp.task('inject',function() {
         .pipe(gulp.dest('./src/views'));
 });
 
-gulp.task('serve',['style','inject'],function(){
+gulp.task('serve',['style','inject'],function() {
     var options = {
         script: 'app.js',
         delayTime: 1,
         env: {
-            'PORT':3000,
+            'PORT':5001,
         },
         watch: jsFiles
-    }
+    };
     return nodemon(options)
-        .on('restart',function(ev){
+        .on('restart',function(ev) {
             console.log('Restarting....');
         });
 });
