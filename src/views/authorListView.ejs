@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Books</title>
+    <title>Author View</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--bower:css-->
@@ -66,7 +66,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h1>Book
+                <h1>Authors List
                     <p class="lead"></p>
                 </h1>
             </div>
@@ -105,8 +105,8 @@
 
 
                     <!--/stories-->
-
-                    <li><a href="<%=book.link%>"><%=book.Text%></a></li>
+                    <% for(var i = 0;i<authors.length;i++){ %>
+                    <ul><a href="<%=authors[i].author%>"><%=authors[i].Text%></a></ul>
 
                     <div class="row">
                         <br>
@@ -114,11 +114,11 @@
                             <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
                         </div>
                         <div class="col-md-10 col-sm-9">
-                            <h3><%=book.title%></h3>
+                            <h3><%=authors[i].authors%></h3>
                             <div class="row">
                                 <div class="col-xs-9">
-                                    <h4><span class="label label-default"><%=book.author%></span></h4><h4>
-
+                                    <h4><span class="label label-default"><%=authors[i].author%></span></h4><h4>
+                                        <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="/books/<%=i%>" class="text-muted">Read More</a></small>
                                     </h4></div>
                                 <div class="col-xs-3"></div>
                             </div>
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <hr>
-
+                    <%}%>
                     <!--/stories-->
 
 

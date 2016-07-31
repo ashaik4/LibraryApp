@@ -32,6 +32,12 @@ var router = function(nav){
             genre: 'Computer Science',
             author: 'C.L.R.S',
             read: false
+        },
+        {
+            title: 'Algorithm Design Manual',
+            genre: 'Computer Science',
+            author: 'Steven Skeina',
+            read: false
         }
 
 
@@ -57,6 +63,6 @@ var router = function(nav){
                 });
         });
     return bookRouter;
-}
+};
 
 module.exports = router;
